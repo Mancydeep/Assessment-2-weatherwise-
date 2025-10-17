@@ -1,0 +1,11 @@
+Tool: Perplexity Pro
+Date: 2025-10-15
+Comparing graphical styles for precipitation
+
+Me: What unique styles can I use to display rainfall data for three days?
+AI: Try a colored bar chart with gradient shading for each bar using plt.cm.Blues for colors, annotate each with the value, and consider bar width for visual effect.
+
+Me: Is a dot plot appropriate for precipitation?
+AI: It's okay for small datasets, but bars are better for daily totals. To further enhance, add value labels above each bar using plt.text.
+
+The conversation aimed to make precipitation visuals more informative and visually distinct from standard bar or line charts in Python.
