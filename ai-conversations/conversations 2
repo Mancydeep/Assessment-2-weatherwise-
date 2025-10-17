@@ -1,0 +1,14 @@
+Tool: Perplexity Pro
+Date: 2025-10-17
+Getting automated weather visualizations
+
+Me: How can I show a temperature trend over three days from wttr.in data?
+AI: Extract 'maxtempC' and 'mintempC' from each day's JSON and use matplotlib's plt.bar for grouped bars or plt.plot for a trend line.
+
+Me: How do I make the chart stand out visually?
+AI: Use distinct colors for max/min, add edgecolor='black' on bars, and label axes for clarity. Use plt.tight_layout() for better spacing.
+
+Me: Can I also annotate the exact temperatures?
+AI: Use plt.text to add numbers above each bar or point on the chart.
+
+The primary goal here was to generate a visually clear yet creative temperature chart using wttr.in in Python, emphasizing both functional data and standout presentation.
