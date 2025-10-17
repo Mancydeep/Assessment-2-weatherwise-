@@ -1,0 +1,14 @@
+Tool: Perplexity Pro
+Date: 2025-10-17
+Comfort and usability of humidity data
+
+Me: Why should I present humidity data along with temperature in my weather advisor project?
+AI: Humidity affects how warm or cool temperatures feel to people. Including average daily humidity helps users better interpret comfort levels, such as muggy vs. dry days.
+
+Me: What's the best way to visualize daily average humidity from JSON weather data?
+AI: Calculate the mean of each day’s hourly 'humidity' values, then plot the result as a line graph or filled area chart over the dates. Adding a gentle color gradient under the curve makes trends visually clear.
+
+Me: How can I help users interpret humid, comfortable, or dry conditions?
+AI: Add colored background regions indicating humidity ranges (e.g., blue for <40% dry, green for 40-60% comfortable, orange/red for >60% humid). This makes comfort zones obvious at a glance.
+
+This conversation improved my project by showing how combining humidity with temperature data and visual comfort ranges leads to a far more user-friendly weather app focused on real-world decision making.
