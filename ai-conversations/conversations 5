@@ -1,0 +1,55 @@
+Tool: ChatGPT
+Date: 2025-10-17
+Me: I'm trying to create a CLI menu in Colab notebooks with options for weather queries and charts. But after one choice, the menu does not reappear automatically.
+
+AI: This is due to how Jupyter and Colab handle blocking input/output. When you use input() or pyinputplus functions, the cell halts until input is provided, and matplotlib plots can block further code execution. Recursion or looping menus don't reload automatically in one cell.
+
+Me: I don't want to use ipywidgets, just a text-based menu but want it to keep coming up after every action without rerunning the cell.
+
+AI: The simplest reliable solution in notebooks is to use a while loop inside the weather_menu() function that continuously prompts the user choices until an exit option is selected. This way, the menu re-displays after every completed action inside the same cell execution.
+
+Me: Can you provide an example of how to implement that?
+
+AI: Sure, here’s a loop-based menu:
+
+python
+def weather_menu():
+    while True:
+        print("\n=== Weather Hub ===")
+        print("1 - Ask Weather Question")
+        print("2 - Temperature Chart")
+        print("3 - Precipitation Chart")
+        print("4 - Humidity Chart")
+        print("5 - Exit")
+        choice = pyip.inputChoice(['1','2','3','4','5'], prompt="Choose (1-5): ")
+
+        if choice == '5':
+            print("Goodbye!")
+            break
+
+        city = pyip.inputStr(prompt="Enter your city name: ")
+        data = get_weather_data(city, forecast_days=3)
+        if not data:
+            print("Weather data unavailable. Please try again.")
+            continue
+
+        if choice == '1':
+            question = pyip.inputStr(prompt="Your question: ")
+            parsed = parse_weather_question(question)
+            parsed['city'] = city
+            print(generate_weather_response(parsed, data))
+        elif choice == '2':
+            create_temperature_visualisation(data)
+        elif choice == '3':
+            create_precipitation_visualisation(data)
+        elif choice == '4':
+            create_humidity_visualisation(data)
+Me: Will this work reliably without requiring me to rerun the cell each time?
+
+AI: Yes, this menu will prompt continuously inside one cell run. Just be aware that heavy plotting or very slow responses may cause input blocking but this is the most notebook-friendly CLI menu approach without widgets.
+
+Me: Great! Thanks.
+
+AI: You’re welcome!
+
+This conversation captures how to address your usage pattern without switching to widgets and explains the design flow to keep the menu interactive in notebooks.
