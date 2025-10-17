@@ -1,4 +1,4 @@
-Tool: Perplexity Pro
+Tool: Gemini AI
 Date: 2025-10-17
 Me: I'm trying to create a CLI menu in Colab notebooks with options for weather queries and charts. But after one choice, the menu does not reappear automatically.
 
