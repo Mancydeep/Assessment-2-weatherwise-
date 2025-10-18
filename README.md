@@ -58,7 +58,7 @@ The AI assistant (**Perplexity Pro**) supported the project by:
 ## Project Structure
 -ai-conversations
 -resources
--subumissions
+-submissions
 --starter_notebook.ipynb
 
 
