@@ -20,7 +20,7 @@ This project serves as an academic demonstration of modular coding, API usage, a
 
 ## 🧠 AI Assistance
 
-The AI assistant (**Perplexity Pro**) supported the project by:  
+The AI assistant (**Gemini AI**) supported the project by:  
 - Creating pseudocode and defining function blueprints.  
 - Enhancing API error management and data fetching logic.  
 - Advising on modular programming and visualization techniques.  
