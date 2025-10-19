@@ -21,3 +21,23 @@ Guard all network operations with exception handling for robustness.
 
 Step 4 – Implementation
 The function was written according to the outlined plan:
+def get_weather_data(location, forecast_days=3):
+    """
+    Obtain forecast details for a selected city and duration via wttr.in, limiting the days as recommended.
+    """
+    endpoint = f"https://wttr.in/{location}?format=j1"
+    try:
+        result = requests.get(endpoint)
+        result.raise_for_status()
+        data = result.json()
+        data['weather'] = data['weather'][:forecast_days]
+        return data
+    except Exception as error:
+        print(f"Unable to retrieve forecast: {error}")
+        return None
+
+Step 5 – Testing and Validation
+The function underwent systematic testing across diverse use cases, including multiple city inputs, unreliable networks, and invalid entries. Each scenario confirmed that the function consistently returned structured weather data or handled exceptions gracefully without program termination.    
+
+Step 6 – Iterative Refinement
+Based on development feedback and repeated AI code review cycles, enhancements were applied. These included renaming variables for improved clarity, enriching inline documentation, and introducing consistent user-facing error messages to strengthen usability and future code maintenance.
